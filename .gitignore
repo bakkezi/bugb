@@ -1,0 +1,18 @@
+# Toolchain internals — never commit
+reconftw/.git/
+reconftw/.venv/
+reconftw/Tools/
+reconftw/data/wordlists/subdomains.txt
+reconftw/data/wordlists/subdomains.txt.gz
+reconftw/Recon/
+reconftw/.tmp/
+reconftw/*.log
+reconftw/install.log
+reconftw/install-run2.log
+
+# Nested projects / archives
+shell/
+*.zip
+
+# OS junk
+.DS_Store

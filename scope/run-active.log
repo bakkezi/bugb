@@ -1,0 +1,38 @@
+nohup: ignoring input
+
+
+                     ________) ______) __       __) 
+                    (, /      (, /    (, )  |  /    
+ __   _  _  _____     /___,     /        | /| /     
+/ (__(/_(__(_) / (_) /       ) /         |/ |/      
+                  (_/       (_/          /  |       
+
+────────────────────────────────────────────────────────────────────────────────
+reconftw main-b9807ab by @six2dez | Authorized testing only
+────────────────────────────────────────────────────────────────────────────────
+Mode: ALL | Target: ditjenpas.go.id | Profile: default | Parallel: true | Job...
+Output: /workspace/project/reconftw/Recon/ditjenpas.go.id
+Network: behind_nat=no | DNS: puredns
+System: PERF_PROFILE=balanced | cores=4 mem=15GB | jobs=4 ffuf=40 httpx=48 | ...
+Started: 2026-10-20 14:56:39
+
+SKIP  tools_installed                              0s
+WARN  Pending tool: trufflehog
+
+── OSINT ───────────────────────────────────────────────────────────────
+Started: 2026-10-20 14:56:39
+OK    ip_info                                      0s
+OK    github_repos                                 4s
+OK    github_leaks                                16s
+OK    github_actions_audit                         1s
+OK    zonetransfer                                 1s
+  Output: osint/, subdomains/
+
+Completed: 2026-10-20 14:56:57
+  [1/5] 20% │ OSINT complete │ OK:5 WARN:0 FAIL:0 SKIP:1 CACHE:6
+
+
+── SUBDOMAINS ───────────────────────────────────────────────────────────────
+Started: 2026-10-20 14:56:57
+RUN   sub_brute                                    -- (bruteforcing subdomains)
+Started: dns bruteforce (puredns)

@@ -1,0 +1,161 @@
+
+
+ ██▀███  ▓█████  ▄████▄   ▒█████   ███▄    █   █████▒▄▄▄█████▓ █     █░   
+▓██ ▒ ██▒▓█   ▀ ▒██▀ ▀█  ▒██▒  ██▒ ██ ▀█   █ ▓██   ▒ ▓  ██▒ ▓▒▓█░ █ ░█░   
+▓██ ░▄█ ▒▒███   ▒▓█    ▄ ▒██░  ██▒▓██  ▀█ ██▒▒████ ░ ▒ ▓██░ ▒░▒█░ █ ░█    
+▒██▀▀█▄  ▒▓█  ▄ ▒▓▓▄ ▄██▒▒██   ██░▓██▒  ▐▌██▒░▓█▒  ░ ░ ▓██▓ ░ ░█░ █ ░█    
+░██▓ ▒██▒░▒████▒▒ ▓███▀ ░░ ████▓▒░▒██░   ▓██░░▒█░      ▒██▒ ░ ░░██▒██▓    
+░ ▒▓ ░▒▓░░░ ▒░ ░░ ░▒ ▒  ░░ ▒░▒░▒░ ░ ▒░   ▒ ▒  ▒ ░      ▒ ░░   ░ ▓░▒ ▒     
+  ░▒ ░ ▒░ ░ ░  ░  ░  ▒     ░ ▒ ▒░ ░ ░░   ░ ▒░ ░          ░      ▒ ░ ░     
+  ░░   ░    ░   ░        ░ ░ ░ ▒     ░   ░ ░  ░ ░      ░        ░   ░     
+   ░        ░  ░░ ░          ░ ░           ░                      ░       
+                ░                                                         
+
+────────────────────────────────────────────────────────────────────────────────
+reconftw main-b9807ab by @six2dez | Authorized testing only
+────────────────────────────────────────────────────────────────────────────────
+Mode: ALL | Target: ditjenpas.go.id | Profile: default | Parallel: true | Job...
+Output: /workspace/project/reconftw/Recon/ditjenpas.go.id
+Network: behind_nat=no | DNS: puredns
+System: PERF_PROFILE=balanced | cores=4 mem=15GB | jobs=4 ffuf=40 httpx=48 | ...
+Started: 2026-10-20 15:31:54
+
+SKIP  tools_installed                              0s
+WARN  Pending tools: swaggerspy_python, CMSeeK, reconftw_ai, dorks_hunter_python, ffufPostprocessing, ghleaks, SSTImap_python, regulator, reconftw_ai_python, EmailHarvester, resolvers, testssl.sh, CMSeeK_python, SSTImap, getjswords, dorks_hunter, spoofy_python, Scopify, JSA, EmailHarvester_python, spoofy, LeakSearch_python, resolvers_trusted, msftrecon, swaggerspy, regulator_python, msftrecon_python, nomore403, JSA_python, Scopify_python, nmap-parse-output, subs_wordlist_big, LeakSearch, nuclei-templates, inscope, dnsvalidator, hakip2host, naabu, puredns, wafw00f, interactsh-client, toxicache, Massdns, analyticsrelationships, crt, urlfinder, nmapurls, cent, favirecon, waymore, gqlspection, dnsx, gitlab-subdomains, dalfox, gitdorks_go, VhostFinder, Gxss, arjun, katana, mapcidr, sj, xnldorker, brutespray, second-order, qsreplace, notify, dsieve, grpcurl, csprecon, hakoriginfinder, postleaksNg, gotator, trufflehog, cewler, subfinder, titus, smugglex, smap, nmap, crlfuzz, Nuclei, sourcemapper, ghauri, Anew, jsluice, Web-Cache-Vulnerability-Scanner, dig, cdncheck, ffuf, fray, subjs, github-endpoints, unfurl, zip, whois, xnLinkFinder, gf, exifray, TInjA, Httpx, shortscan, commix, tlsx, mantra, github-subdomains, enumerepo, urless, s3scanner, interlace, porch-pirate, dnstake
+
+── OSINT ───────────────────────────────────────────────────────────────
+Started: 2026-10-20 15:31:54
+OK    ip_info                                      0s
+  Output: osint/, subdomains/
+
+Completed: 2026-10-20 15:31:54
+  [1/5] 20% │ OSINT complete │ OK:1 WARN:0 FAIL:0 SKIP:1 CACHE:10
+
+
+── SUBDOMAINS ───────────────────────────────────────────────────────────────
+Started: 2026-10-20 15:31:54
+WARN  Resolvers seem older than 1 day. Downloading new resolvers...
+[2026-10-20 15:31:54] Downloading: resolvers.txt
+[2026-10-20 15:31:55] Download failed: https://raw.githubusercontent.com/trickest/resolvers/main/resolvers.txt
+WARN  subtakeover: nuclei binary not found in PATH - install nuclei first
+RUN   s3buckets                                    -- (scanning S3 and cloud buckets)
+/workspace/project/reconftw/modules/subdomains.sh: line 2194: anew: command not found
+RUN   cloud_enum                                   -- (enumerating cloud buckets (cloud_enum))
+WARN  s3buckets: cloud_enum runtime not found (checked /home/openhands/Tools/cloud_enum local runtime and uv run).
+WARN  cloud_enum                                   0s
+OK    s3buckets                                    0s
+  Output: subdomains/, webs/
+
+Completed: 2026-10-20 15:31:55
+  [2/5] 40% │ Subdomains complete │ OK:2 WARN:1 FAIL:0 SKIP:1 CACHE:10
+
+
+── WEB DETECTION ───────────────────────────────────────────────────────────────
+Started: 2026-10-20 15:31:55
+OK    webprobe_full                                0s
+OK    screenshot                                   0s
+OK    favirecon_tech                               0s
+SKIP  tls_ip_pivots                                0s
+         reason: config
+SKIP  virtualhosts                                 0s
+         reason: config
+  Output: webs/, hosts/, screenshots/
+
+Completed: 2026-10-20 15:31:56
+  [3/5] 60% │ Web Detection complete │ OK:5 WARN:1 FAIL:0 SKIP:3 CACHE:13
+
+
+── WEB ANALYSIS ───────────────────────────────────────────────────────────────
+Started: 2026-10-20 15:31:56
+WARN  waf_checks: wafw00f not found in PATH
+WARN  nuclei_check: nuclei binary not found in PATH - install nuclei first
+WARN  No graphql-detect findings in nuclei_check outputs; skipping GraphQL deep checks.
+OK    graphql_scan                                 0s
+SKIP  fuzz                                         0s
+         reason: noinput
+         No ditjenpas.go.id/webs/webs_all.txt file found, fuzzing skipped 
+OK    iishortname                                  0s
+SKIP  swagger_check                                0s
+         reason: noinput
+         sj not found in PATH, skipping
+WARN  No web targets available for URL extraction.
+SKIP  urlchecks                                    0s
+         reason: noinput
+         No web targets available for URL extraction.
+OK    jschecks                                     0s
+SKIP  sub_js_extract                               0s
+         reason: noinput
+         No hostnames found in JS/crawl outputs
+SKIP  well_known_pivots                            0s
+         reason: config
+OK    websocket_checks                             0s
+SKIP  grpc_reflection                              0s
+         reason: config
+OK    llm_probe                                    0s
+SKIP  param_discovery                              0s
+         reason: mode
+  Output: webs/, hosts/, vulns/, nuclei_output/, js/, fuzzing/
+
+Completed: 2026-10-20 15:31:57
+  [4/5] 80% │ Web Analysis complete │ OK:10 WARN:1 FAIL:0 SKIP:10 CACHE:13
+
+
+── FINALIZATION ───────────────────────────────────────────────────────────────
+Started: 2026-10-20 15:31:57
+SKIP  cms_scanner                                  0s
+         reason: noinput
+         No webs/webs_all.txt file found, cms scanner skipped.
+WARN  url_gf: gf not found in PATH
+OK    wordlist_gen                                 0s
+SKIP  wordlist_gen_roboxtractor                    0s
+         reason: mode
+OK    password_dict                                0s
+SKIP  url_ext                                      0s
+         reason: noinput
+         No .tmp/url_extract_tmp.txt file found, URL_EXT check skipped.
+  Output: webs/, gf/, cms/
+
+Completed: 2026-10-20 15:31:58
+  [5/5] 100% │ Finalization complete │ OK:12 WARN:1 FAIL:0 SKIP:13 CACHE:13
+
+
+── VULNERABILITY CHECKS ───────────────────────────────────────────────────────────────
+Started: 2026-10-20 15:31:58
+OK    crlf_checks                                  0s
+SKIP  xss                                          0s
+         reason: noinput
+SKIP  ssrf_checks                                  0s
+         reason: noinput
+SKIP  lfi                                          0s
+         reason: noinput
+SKIP  ssti                                         0s
+         reason: noinput
+SKIP  sqli                                         0s
+         reason: noinput
+SKIP  command_injection                            0s
+         reason: noinput
+OK    smuggling                                    0s
+OK    webcache                                     0s
+SKIP  spraying                                     0s
+         reason: noinput
+SKIP  brokenLinks                                  0s
+         reason: noinput
+OK    fray_checks                                  0s
+WARN  fuzzparams: nuclei binary not found in PATH - install nuclei first
+WARN  nuclei_dast: nuclei binary not found in PATH - install nuclei first
+/workspace/project/reconftw/modules/vulns.sh: line 753: anew: command not found
+/workspace/project/reconftw/modules/vulns.sh: line 756: .tmp/403test.txt: No such file or directory
+/workspace/project/reconftw/modules/vulns.sh: line 764: cd: /home/openhands/Tools/nomore403: No such file or directory
+WARN  nomore403 failed or directory not found.
+OK    4xxbypass                                    0s
+OK    test_ssl                                     0s
+
+RESULTS  ditjenpas.go.id
+Mode: ALL
+Subdomains: 21
+Web hosts: 0
+Findings: C 0 | H 0 | M 0 | L 0 | I 0
+Duration: 6 seconds.
+Output: /workspace/project/reconftw/Recon/ditjenpas.go.id
+Debug log: /workspace/project/reconftw/Recon/ditjenpas.go.id/debug.log
+

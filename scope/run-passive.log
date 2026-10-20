@@ -1,0 +1,85 @@
+nohup: ignoring input
+
+
+ ___   ____  __    ___   _      ____ _____  _      
+| |_) | |_  / /`  / / \ | |\ | | |_   | |  \ \    /
+|_| \ |_|__ \_\_, \_\_/ |_| \| |_|    |_|   \_\/\/ 
+
+────────────────────────────────────────────────────────────────────────────────
+reconftw main-b9807ab by @six2dez | Authorized testing only
+────────────────────────────────────────────────────────────────────────────────
+Mode: PASSIVE | Target: ditjenpas.go.id | Profile: default | Parallel: true |...
+Output: /workspace/project/reconftw/Recon/ditjenpas.go.id
+Network: behind_nat=no | DNS: puredns
+System: PERF_PROFILE=balanced | cores=4 mem=15GB | jobs=4 ffuf=40 httpx=48 | ...
+Started: 2026-10-20 14:37:32
+
+SKIP  tools_installed                              0s
+WARN  Pending tool: trufflehog
+
+── OSINT ───────────────────────────────────────────────────────────────
+Started: 2026-10-20 14:37:33
+OK    domain_info                                 14s
+OK    emails                                   1m 20s
+OK    google_dorks                                19s
+[FAIL] Required file /home/openhands/Tools/.github_tokens does not exist or is empty
+[FAIL] Required file /home/openhands/Tools/.github_tokens does not exist or is empty
+[FAIL] Required file /home/openhands/Tools/.github_tokens does not exist or is empty
+OK    metadata                                 5m 14s
+WARN  SwaggerSpy failed (exit 1), continuing without swagger results.
+OK    apileaks                                    51s
+OK    third_party_misconfigs                   6m 14s
+
+── SUBDOMAINS ───────────────────────────────────────────────────────────────
+Started: 2026-10-20 14:51:45
+WARN  ASN_ENUM enabled but PDCP_API_KEY is not set. Skipping asnmap ASN enumeration.
+WARN  sub_asn                                      0s
+OK    sub_passive                                 22s
+OK    sub_crt                                      6s
+Started: dns resolve (puredns)
+Completed: dns resolve (puredns) (29s)
+OK    sub_active                                  29s
+SKIP  sub_brute                                    0s
+         reason: config
+SKIP  sub_permut                                   0s
+         reason: config
+SKIP  sub_regex_permut                             0s
+         reason: config
+/workspace/project/reconftw/modules/subdomains.sh: line 1707: 58482 Segmentation fault      subwiz -i subdomains/subdomains.txt --no-resolve -o .tmp/subwiz.txt 2>> "$LOGFILE" > /dev/null
+OK    sub_ia_permut                                1s
+SKIP  sub_noerror                                  1s
+         reason: config
+OK    sub_dns                                     53s
+OK    sub_srv                                      3s
+SKIP  sub_ptr_cidrs                                0s
+         reason: config
+OK    sub_tls                                      9s
+SKIP  sub_analytics                                0s
+         reason: config
+SKIP  sub_ns_delegation                            0s
+         reason: config
+SKIP  sub_recursive_passive                        0s
+         reason: config
+SKIP  sub_recursive_brute                          0s
+         reason: config
+SKIP  sub_scraping                                 0s
+         reason: config
+OK    subdomains_full                              0s
+INFO Artifacts: 21 found -> subdomains/subdomains.txt
+
+── WEB DETECTION ───────────────────────────────────────────────────────────────
+Started: 2026-10-20 14:53:42
+OK    cdnprovider                                  1s
+OK    service_fingerprint                          0s
+OK    portscan                                     4s
+OK    geo_info                                     0s
+
+RESULTS  ditjenpas.go.id
+Mode: PASSIVE
+Subdomains: 21
+Web hosts: 0
+Findings: C 0 | H 0 | M 0 | L 0 | I 0
+Duration: 16 minutes, 15 seconds.
+Output: /workspace/project/reconftw/Recon/ditjenpas.go.id
+Debug log: /workspace/project/reconftw/Recon/ditjenpas.go.id/debug.log
+
